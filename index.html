@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JAY TOURS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+    main {
+      flex: 1;
+    }
+
+    #image1 {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    #topdes {
+      text-align: center;
+      color: orange;
+    }
+
+    .destination img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .destination h6 {
+      margin-top: 10px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .stats-section {
+      background: linear-gradient(to right, #002244, #003366);
+      color: #f37021;
+      padding: 40px 0;
+    }
+
+    .testimonial-card {
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #fff;
+      height: 100%;
+    }
+
+    .testimonial-card h5 {
+      color: #007bff;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form input[type="tel"] {
+      margin-bottom: 15px;
+    }
+
+    .btn-signin {
+      background-color: #00aaff;
+      color: white;
+      border: none;
+      width: 350px;
+    }
+
+    .team-section {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .team-section h2 {
+      color: #f37021;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .team-section p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .team-member img {
+      width: 70%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .team-member h5 {
+      font-size: 18px;
+      margin-top: 10px;
+      font-weight: 500;
+    }
+    .destination a {
+  text-decoration: none;       
+  color: inherit;              
+  display: block;             
+  transition: transform 0.2s;  
+}
+   #footer-begin{
+           background-color: #002b44;
+
+   }
+
+
+  </style>
+
+</head>
+<body>
+ <script>
+  function animateCounter(id, target, duration) {
+    const element = document.getElementById(id);
+    let start = 0;
+    const step = Math.ceil(target / (duration / 10));
+    const interval = setInterval(() => {
+      start += step;
+      if (start >= target) {
+        element.textContent = target + (target >= 1000 ? '+' : '');
+        clearInterval(interval);
+      } else {
+        element.textContent = start;
+      }
+    }, 10);
+  }
+
+ 
+  let triggered = false;
+  window.addEventListener('scroll', () => {
+    const section = document.querySelector('.stats-section');
+    const top = section.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (!triggered && top < windowHeight - 100) {
+      animateCounter('counter1', 250000, 1500);
+      animateCounter('counter2', 800, 1000);
+      animateCounter('counter3', 150, 1000);
+      animateCounter('counter4', 15, 800);
+      triggered = true;
+    }
+  });
+</script>
+
+  <header>
+    <nav class="navbar navbar-expand-lg bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand text-warning fs-01" href="#">JAY TOURS</a>
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active text-light" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link text-light" href="./About.html">About</a></li>
+            <li class="nav-item"><a class="nav-link text-light" href="./services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link text-light" href="#">Testimonials</a></li>
+            <li class="nav-item"><a class="nav-link text-light" href="#">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link text-light" href="./contact.html">Contacts</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+   
+    <section>
+      <img src="./Images/main.jpg" id="image1" class="img-fluid" alt="...">
+    </section>
+
+    <section>
+  <h2 id="topdes" class="mt-4">TOP DESTINATION</h2>
+  <div class="container py-5">
+    <div class="row text-center justify-content-center">
+
+      <div class="col-6 col-sm-4 col-md-2 destination mx-2">
+        <a href="https://www.booking.com/country/lk.html" target="_blank">
+          <h6>SRI LANKA</h6>
+          <img src="./Images/Top Destinations/Sri Lanka.jpg" alt="Sri Lanka">
+        </a>
+      </div>
+
+      <div class="col-6 col-sm-4 col-md-2 destination mx-2">
+        <a href="https://www.booking.com/city/it/rome.html" target="_blank">
+          <h6>ROME</h6>
+          <img src="./Images/Top Destinations/Rome.jpg" alt="Rome">
+        </a>
+      </div>
+
+      <div class="col-6 col-sm-4 col-md-2 destination mx-2">
+        <a href="https://www.booking.com/region/mv/maldives.html" target="_blank">
+          <h6>MALDIVES</h6>
+          <img src="./Images/Top Destinations/Maldives.jpg" alt="Maldives">
+        </a>
+      </div>
+
+      <div class="col-6 col-sm-4 col-md-2 destination mx-2">
+        <a href="https://www.booking.com/country/ch.html" target="_blank">
+          <h6>SWITZERLAND</h6>
+          <img src="./Images/Top Destinations/Switzerland.jpg" alt="Switzerland">
+        </a>
+      </div>
+
+      <div class="col-6 col-sm-4 col-md-2 destination mx-2">
+        <a href="https://www.hyatt.com/grand-hyatt/en-US/bangh-grand-hyatt-erawan-bangkok/offers?src=prop_bangh_en_sem_pridemonth_google_non-brand_b_search_room-pridemonth-ggads-bangh" target="_blank">
+          <h6>THAILAND</h6>
+          <img src="./Images/Top Destinations/Thailand.jpg" alt="Thailand">
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    
+    <section class="team-section">
+      <div class="container">
+        <h2>OUR TEAM LEADS</h2>
+        <p>
+          Teamwork is the ability to work together toward a common vision. The ability to direct individual accomplishments toward organizational objectives.
+          It is the fuel that allows common people to attain uncommon results.
+        </p>
+        <div class="row justify-content-center mt-5">
+          <div class="col-md-4 team-member">
+            <img src="./Images/Team Leaders/Hugo Silva.jpg" alt="Hugo Silva">
+            <h5>Hugo Silva</h5>
+          </div>
+          <div class="col-md-4 team-member">
+            <img src="./Images/Team Leaders/Imanoli Arias.jpg" alt="Imanoli Arias">
+            <h5>Imanoli Arias</h5>
+          </div>
+          <div class="col-md-4 team-member">
+            <img src="./Images/Team Leaders/Javier Bardem.jpg" alt="Javier Bardem">
+            <h5>Javier Bardem</h5>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-section text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-md-3">
+        <h2 id="counter1">0</h2>
+        <p>HAPPY CLIENTS</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <h2 id="counter2">0</h2>
+        <p>WEEKLY RESERVATIONS</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <h2 id="counter3">0</h2>
+        <p>TRAVEL PARTNERS</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <h2 id="counter4">0</h2>
+        <p>BRANCHES</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <section class="py-5 text-center">
+      <div class="container">
+        <h3 class="text-orange mb-4" style="color: #f37021;">OVERHEAD FROM TRAVELERS</h3>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <h5>Hotel Eucalyptus</h5>
+              <small>in Greece</small>
+              <p>“We booked Hotel Eucalyptus through Jay after reading a handful of reviews, and it was easily the best decision we made … <a href="#">more</a>”</p>
+              <p class="text-muted">– Joyce from Canada</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <h5>Holiday Inn Resort Batam</h5>
+              <small>in Indonesia</small>
+              <p>“Thanks Jay for letting me change room without charge and rebate the difference. Nice staffs Agoda and Holiday Inn!”</p>
+              <p class="text-muted">– Andy from Singapore</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="testimonial-card">
+              <h5>Hotel Granvia Kyoto</h5>
+              <small>in Japan</small>
+              <p>“Our family was traveling via bullet train between cities in Japan with our luggage – the location for this hotel made that … <a href="#">more</a>”</p>
+              <p class="text-muted">– Diane from the United States</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 text-center contact-form">
+      <div class="container">
+        <h3 style="color: #f37021;">CONTACT US</h3>
+        <form class="mx-auto mt-4" style="max-width: 600px;">
+          <div class="row">
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="First Name">
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Last Name">
+            </div>
+          </div>
+          <input type="email" class="form-control" placeholder="E-mail">
+          <input type="tel" class="form-control" placeholder="Phone Number">
+          <div class="form-check my-3 text-start">
+            <input type="checkbox" class="form-check-input" id="newsletter">
+            <label class="form-check-label" for="newsletter">Subscribe to our newsletter</label>
+          </div>
+          <button type="submit" class="btn btn-signin">SIGN IN</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <section class="text-light py-4" id="footer-begin">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <div class="col-6 col-md-2 mb-3">
+          <h5>Help</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light text-decoration-none">Help Center</a></li>
+            <li><a href="#" class="text-light text-decoration-none">FAQs</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Terms of Use</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2 mb-3">
+          <h5>About Us</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light text-decoration-none">Blog</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Careers</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2 mb-3">
+          <h5>Destinations</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light text-decoration-none">Countries</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Cities</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-2 mb-3">
+          <h5>PARTNER WITH US</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light text-decoration-none">Properties</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Affiliates</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-4 mb-3">
+          <p class="mb-0">Phone: +94 0779943239</p>
+          <p class="mb-0">Phone: +94 0779943239</p>
+          <p></p>
+          <p class="mb-0">123 havalok city,colombo 04</p>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-dark text-light text-center py-2">
+    <p class="mb-0">&copy; 2025 JAY TOURS. lahiru lakshan</p>
+  </footer>
+
+</body>
+</html>
